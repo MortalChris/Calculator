@@ -1,31 +1,61 @@
 *{
     margin: 0;
     padding: 0;
+    font-size: 1rem;
+    color: #D9C64E;
 }
 body{
     margin: auto;
-    background-color: #325991;
+    background-color: #0A2028;
+    display: flex;
+	justify-content: center;
+	align-items: center
 }
 #main-container{
     display: grid;
-    display: flex;
-    place-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    margin: 7rem 0rem 0rem 0rem;
+    border: 1px solid black;
+    gap: .5rem;
     grid-template-areas:
     "result result result result"
     "o-para c-para percentage AC"
     "seven eight nine divide"
-    "four five six multiply"
+    "four five six multi"
     "one two three minus"
-    "zeros dot equal plus";
+    "zeros dots equal plus";
+    height: 50rem;
+    width: 30%;
 }
+
+
 /* Buttons */
 button{
-    background:#C63B39;
-    border: 1px solid #4F1618;
-    padding: 1.5rem;
+    background:#335B50;
+    border: 1px solid #DA712E;
+    padding: 2rem;
 }
+button:hover {
+    background-color: #DA712E;
+}
+button:active {
+    background-color: #DA712E;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+/* Result */
+#result-screen{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #DA712E;
+    padding: 1rem;
+    grid-area: result;
+    background:#335B50;
+}
+
+
 /* Buttons Numbers */
 #one{
     grid-area: one;
@@ -57,7 +87,36 @@ button{
 #zero{
     grid-area: zeros;
 }
+
+
 /* Buttons special Characteristics */
 #divide{
     grid-area: divide;
+}
+#plus{
+    grid-area: plus;
+}
+#minus{
+    grid-area: minus;
+}
+#o-para{
+    grid-area: o-para;
+}
+#c-para{
+    grid-area: c-para;
+}
+#multiply{
+    grid-area: multi;
+}
+#dot{
+    grid-area: dots;
+}
+#percentage{
+    grid-area: percentage;
+}
+#equal{
+    grid-area: equal;
+}
+#AC{
+    grid-area: AC;
 }
