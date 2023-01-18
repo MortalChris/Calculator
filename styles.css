@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: auto;
+    background-color: #325991;
+}
+#main-container{
+    display: grid;
+    display: flex;
+    place-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+    "result result result result"
+    "o-para c-para percentage AC"
+    "seven eight nine divide"
+    "four five six multiply"
+    "one two three minus"
+    "zeros dot equal plus";
+}
+/* Buttons */
+button{
+    background:#C63B39;
+    border: 1px solid #4F1618;
+    padding: 1.5rem;
+}
+/* Buttons Numbers */
+#one{
+    grid-area: one;
+}
+#two{
+    grid-area: two;
+}
+#three{
+    grid-area: three;
+}
+#four{
+    grid-area: four;
+}
+#five{
+    grid-area: five;
+}
+#six{
+    grid-area: six;
+}
+#seven{
+    grid-area: seven;
+}
+#eight{
+    grid-area: eight;
+}
+#nine{
+    grid-area: nine;
+}
+#zero{
+    grid-area: zeros;
+}
+/* Buttons special Characteristics */
+#divide{
+    grid-area: divide;
+}
