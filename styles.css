@@ -1,8 +1,10 @@
+/* Font */@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
 *{
     margin: 0;
     padding: 0;
     font-size: 1rem;
     color: #D9C64E;
+    font-family: 'Teko', sans-serif;
 }
 body{
     margin: auto;
@@ -32,7 +34,7 @@ body{
 button{
     background:#335B50;
     border: 1px solid #DA712E;
-    padding: 2rem;
+    padding: 1rem;
 }
 button:hover {
     background-color: #DA712E;
@@ -42,8 +44,6 @@ button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-
-
 /* Result */
 #result-screen{
     display: flex;
