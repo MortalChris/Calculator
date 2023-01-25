@@ -25,50 +25,50 @@ const result = document.getElementById("result-screen");
     const btnEqual = document.getElementById("equal");
 
     const allBtns = document.querySelectorAll("button");
-    let fullOper = "";
+    let fullOper = [];
     
 
 //Buttons for each number
 const numBtn = () =>{
     btn0.addEventListener("click", function(){
         result.textContent += 0;
-        return fullOper += 0;
+        fullOper.push(0);
     });
     btn1.addEventListener("click", function(){
         result.textContent += 1;
-        return fullOper += 1;
+         fullOper.push(1);
     });
     btn2.addEventListener("click", function(){
         result.textContent += 2;
-        return fullOper += 2;
+         fullOper.push(2);
     });
     btn3.addEventListener("click", function(){
         result.textContent += 3;
-        return fullOper += 3;
+         fullOper.push(3);
     });
     btn4.addEventListener("click", function(){
         result.textContent += 4;
-        return fullOper += 4;
+         fullOper.push(4);
     }); 
     btn5.addEventListener("click", function(){
         result.textContent += 5;
-        return fullOper += 5;
+         fullOper.push(5);
     });
     btn6.addEventListener("click", function(){
         result.textContent += 6;
-        return fullOper += 6;
+         fullOper.push(6);
     }); 
     btn7.addEventListener("click", function(){
         result.textContent += 7;
-        return fullOper += 7;
+         fullOper.push(7);
     });
     btn8.addEventListener("click", function(){
         result.textContent += 8;
-        return fullOper += 8;
+         fullOper.push(8);
     }); 
     btn9.addEventListener("click", function(){
         result.textContent += 9;
-        return fullOper += 9;
+         fullOper.push(9);
     });
 
 };   
@@ -79,65 +79,63 @@ numBtn();
 const numerialFunctions = () => {
     btnClear.addEventListener("click", function(){
         result.textContent = "";
-        return fullOper = "";
+         fullOper = [];
     });
     btnPlus.addEventListener("click", function(){
         result.textContent += "+";
-        return fullOper += "+";
+         fullOper.push("+");
     });
     btnMinus.addEventListener("click", function(){
         result.textContent += "-";
-        return fullOper += "-";
+         fullOper.push("-");
     });
     btnOPara.addEventListener("click", function(){
         result.textContent += "(";
-        return fullOper += "(";
+         fullOper.push("(");
     });
     btnCPara.addEventListener("click", function(){
         result.textContent += ")";
-        return fullOper += ")";
+         fullOper.push(")");
     });
     btnDot.addEventListener("click", function(){
         result.textContent += ".";
-        return fullOper += ".";
+         fullOper.push(".");
     });
     btnDiv.addEventListener("click", function(){
         result.textContent += "/";
-        return fullOper += "/";
+         fullOper.push("/");
     });
     btnMult.addEventListener("click", function(){
         result.textContent += "*";
-        return fullOper += "*";
+         fullOper.push("*");
     });
     btnPerc.addEventListener("click", function(){
         result.textContent += "%";
-        return fullOper += "%";
+        fullOper.push("%");
     });
 }; 
 numerialFunctions();
 
-btnEqual.addEventListener("click", function(){
-    let result = fullOper;
-    console.log("Retuns" + " " + result);
-});
 
-for (i of allBtns) {
-    i.addEventListener('click', () => {
-        console.log(fullOper);
-        })
+const equationResult = () => {
+    let solvedResult
+
+        btnEqual.addEventListener("click", function(){
+            solvedResult = eval(fullOper.join(""));
+            fullOper = [];
+            fullOper.push(solvedResult);
+            result.textContent  = solvedResult;
+            console.log("Retuns" + " " + solvedResult);
+        });
+
+        for(i of allBtns){
+            i.addEventListener('click', () => {
+                console.log (fullOper);
+                });
+        };
     };
+equationResult();
 
 
-// allBtns.addEventListener('click', () => {
-//     console.log ("This is an array" + " " + array);
-//     console.log(result.textContent);
-//     });
-
-//Getting the result
-// btnEqual.addEventListener("click", function(){
-//     let red = parseInt(result.textContent);
-//     console.log(red);
-//     result.textContent = red;
-// });
 };
 start();
