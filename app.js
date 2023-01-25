@@ -119,20 +119,18 @@ numerialFunctions();
 
 const equationResult = () => {
     let solvedResult
-
         btnEqual.addEventListener("click", function(){
-            solvedResult = eval(fullOper.join(""));
+            solvedResult = Function("return " + fullOper.join(""))();
             fullOper = [];
             fullOper.push(solvedResult);
             result.textContent  = solvedResult;
             console.log("Retuns" + " " + solvedResult);
         });
-
-        for(i of allBtns){
-            i.addEventListener('click', () => {
-                console.log (fullOper);
-                });
-        };
+    //     for(i of allBtns){
+    //         i.addEventListener('click', () => {
+    //             console.log (fullOper);
+    //             });
+    //     };
     };
 equationResult();
 
